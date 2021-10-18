@@ -3,6 +3,7 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import AddProduct from "./Add";
 import { remove } from "./api/ProductAPI";
 import Edit from "./Edit";
+import Bang from "./Bang";
 
 const Product = (props) => {
   const { url } = useRouteMatch();
@@ -21,8 +22,8 @@ const Product = (props) => {
           {props.products.map((item, index) => (
             <div>
               <Link to={`/product/${item.id}`}>{item.name}</Link>
-              <button onClick={() => removeProduct(item.id)}>Delete</button>
-              <Link to={`/product/${item.id}/edit`}>Edit</Link>
+              {/* <button onClick={() => removeProduct(item.id)}>Delete</button>
+              <Link to={`/productedit/${item.id}`}>Edit</Link> */}
             </div>
           ))}
         </Route>
@@ -34,6 +35,9 @@ const Product = (props) => {
         </Route>
         <Route path={`${url}/:id/edit`}>
           <Edit {...props} />
+        </Route>
+        <Route path={`${url}/product`}>
+         <Bang {...props}/>
         </Route>
       </Switch>
     </div>

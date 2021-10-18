@@ -35,9 +35,12 @@ export default function App() {
         onDelete={onHandleDelete}
         onUpdate={onHandleUpdate}
       />
-      <Bang products={products}
+      {/* <Bang products={products}
+        // products={products}
+        onAdd={onHandleAdd}
         onDelete={onHandleDelete}
-      />
+        onUpdate={onHandleUpdate}
+      /> */}
     </div>
   );
 }
